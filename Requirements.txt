@@ -1,0 +1,34 @@
+# ===== UI =====
+streamlit>=1.39.0
+
+# ===== Audio ingestion =====
+yt-dlp>=2024.10.0          # download audio from YouTube URLs
+pydub>=0.25.1              # audio format handling / chunking
+# NOTE: ffmpeg must be installed on the system (not a pip package)
+
+# ===== Transcription (local Whisper) =====
+openai-whisper>=20240930   # or swap for faster-whisper>=1.0.3 for speed
+torch>=2.2.0
+numpy>=1.26.0
+
+# ===== Translation (Hindi -> English) =====
+# Whisper's built-in task="translate" handles this; for text-level fallback:
+deep-translator>=1.11.4
+
+# ===== LLM orchestration (LangChain LCEL + Mistral) =====
+langchain>=0.3.0
+langchain-core>=0.3.0
+langchain-community>=0.3.0
+langchain-text-splitters>=0.3.0
+langchain-mistralai>=0.2.0
+python-dotenv>=1.0.1       # load MISTRAL_API_KEY from .env
+
+# ===== RAG: vector store + embeddings =====
+chromadb>=0.5.5
+langchain-chroma>=0.1.4
+langchain-huggingface>=0.1.0
+sentence-transformers>=3.0.0
+
+# ===== Export (PDF / TXT) =====
+fpdf2>=2.8.0
+# alternative: reportlab>=4.2.0
